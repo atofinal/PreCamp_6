@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ความหมาย tag name attibute ใช้งานอย่างไร เปรียบเทียบ ความเหมือน ความแตกต่าง ลักษณะการใช้งาน คำอธิบาย">
+    <meta name="keywords" content="HTML พื้นฐาน เบื้องต้น">
+    <title>Homework - HTML structure</title>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th {
+            text-align: center;
+            background-color: #f2f2f2;
+            height: 50px;
+        }
+        td {
+            text-align: left;
+            padding-left:20px;
+            padding-right:20px;
+        }
+        tr:hover {background-color:#f5f5f5;}
+        @media screen and (min-width: 768px) {
+        body {
+                width: 80%;	
+                display: block;
+                margin-left: auto;
+                margin-right:auto;
+            }
+        }
+        img {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Homework</h2>
+        <h3>HTML structure</h3>
+        <img src="./img/homework_html_structure.png" alt="Homework - HTML structure" width="100%" />
+    </div>
+
+    <br>
+    <div>
+        <table width="100%">
+            <tr>
+              <th>Tag Name</th>
+              <th>Attibute (support HTML5)</th>
+              <th>ใช้งานอย่างไร</th>
+            </tr>
+            <tr>
+              <td>h</td>
+              <td>id ,class ,style</td>
+              <td>แท็กที่ใช้ในการกำหนดส่วนหัว HTML</td>
+            </tr>
+            <tr>
+                <td>p</td>
+                <td>id ,class ,style</td>
+                <td>แท็กกำหนดย่อหน้า Paragraph</td>
+              </tr>
+              <tr>
+                <td>div</td>
+                <td>id ,class ,style</td>
+                <td>แท็กที่สามารถครอบแท็กส่วนต่างๆได้ หรือส่วนในเอกสารต่างๆ</td>
+              </tr>
+              <tr>
+                <td>img</td>
+                <td>id ,class ,style ,width ,height ,src ,alt</td>
+                <td>แท็กกำหนดภาพ</td>
+              </tr>
+              <tr>
+                <td>a</td>
+                <td>id ,class ,style ,href ,target</td>
+                <td>แท็กกำหนดไฮเปอร์ลิงก์ซึ่งใช้เพื่อลิงก์จากหน้าหนึ่งไปอีกหน้าหนึ่ง</td>
+              </tr>
+              <tr>
+                <td>ul</td>
+                <td>id ,class ,style</td>
+                <td>แท็กกำหนดรายการ (สัญลักษณ์แสดงหัวข้อย่อย)</td>
+              </tr>
+              <tr>
+                <td>ol</td>
+                <td>id ,class ,style ,value</td>
+                <td>แท็กกำหนดรายการ (สัญลักษณ์ตัวเลขหรือตัวอักษร)</td>
+              </tr>
+              <tr>
+                <td>table</td>
+                <td>id ,class ,style</td>
+                <td>แท็กกำหนดตาราง</td>
+              </tr>
+              <tr>
+                <td>form</td>
+                <td>id ,class ,style ,action ,method ,name</td>
+                <td>แท็กจะใช้ในการสร้างรูปแบบการป้อนข้อมูล</td>
+              </tr>
+              <tr>
+                <td>button</td>
+                <td>id ,class ,style ,disabled ,name ,type ,value</td>
+                <td>แท็กกำหนดปุ่มที่คลิกได้</td>
+              </tr>
+          </table>
+    </div>
+
+    <br>
+    <div>
+        <table width="100%">
+            <tr>
+                <th>เปรียบเทียบ Tag</th>
+                <th>ความเหมือน</th>
+                <th>ความแตกต่าง</th>
+            </tr>
+            <tr>
+                <td>&lt;hr&gt; & &lt;br&gt;</td>
+                <td>ขึ้นบรรทัดใหม่</td>
+                <td>hr คือ เส้นแบ่งหน้ากระดาษ 
+                    <br>br คือ ขึ้นบรรทัดใหม่อย่างเดียว
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;ul&gt; & &lt;ol&gt;</td>
+                <td>แท็กกำหนดลิสรายการ</td>
+                <td>ul มีสัญญาลักษณ์เป็นจุด 
+                    <br>ol มีสัญญาลักษณ์เป็นตัวเลขตามลำดับ
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;select&gt; & &lt;checkbox&gt; <br>& &lt;radio button&gt;</td>
+                <td>ตัวเลือก ในหน้าฟอร์ม</td>
+                <td>select เลือกได้หลายรายการ และแสดงผลแบบเห็นแค่ตัวเลือกเดียวได้ 
+                    <br>checkbox สามารถเลือกได้หลายรายการ
+                    <br>radio button เลือกได้แค่รายการเดียว
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;div&gt; & &lt;span&gt;</td>
+                <td>สามารถครอบแท็กอื่นๆได้</td>
+                <td>div ครอบแล้วขึ้นบรรทัดใหม่
+                    <br>span ครอบแล้วสามารถอยู่ในบรรทัดเดียวกันได้
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;script&gt; & &lt;style&gt;</td>
+                <td>แท็กที่ใช้ในการกำหนดชุดคำสั่ง</td>
+                <td>script แท็กถูกใช้เพื่อกำหนดชุดคำสั่ง JavaScript
+                    <br>style แท็กใช้ในการกำหนดชุดคำสั่ง CSS
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <div>
+        <table width="100%">
+            <tr>
+                <th>input type</th>
+                <th>ความแตกต่าง และลักษณะการใช้งาน</th>                
+            </tr>
+            <tr>
+                <td>button</td>
+                <td>เป็นรูปแบบปุ่มกด</td>
+            </tr>
+            <tr>
+                <td>checkbox</td>
+                <td>เป็นช่องติกเลือกได้หลายรายการ</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>เป็นรูปแบบการเลือกสี</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>เป็นรูปแบบการเลือกหรือใส่ข้อมูล วัน เดือน ปี</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>เป็นช่องกรอกข้อมูลอีเมล</td>
+            </tr>
+            <tr>
+                <td>file</td>
+                <td>เป็นช่องเลือกไฟล์ หรือการแนปไฟล์</td>
+            </tr>
+            <tr>
+                <td>hidden</td>
+                <td>เป็นรูปแบบการซ้อนให้มองไม่เห็น</td>
+            </tr>
+            <tr>
+                <td>image</td>
+                <td>เป็นรูปแบบการแสดงภาพ</td>
+            </tr>
+            <tr>
+                <td>month</td>
+                <td>เป็นรูปแบบการเลือกหรือใส่ข้อมูล เดือน ปี</td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td>เป็นรูปแบบการเลือกหรือใส่ข้อมูลตัวเลข</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>เป็นรูปแบบการเลือกหรือใส่ข้อมูล password ข้อมูลที่กรอกจะแสดงเป็นเครื่องหมาย *</td>
+            </tr>
+            <tr>
+                <td>radio</td>
+                <td>เป็นช่องติกเลือกรายการได้เพียงรายการเดียว</td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td>เป็นรูปแบบการเลือกระยะที่กำหนด เริ่มต้นที่-สิ้นสุดที่</td>
+            </tr>
+            <tr>
+                <td>reset</td>
+                <td>เป็นปุ่มรีเซตข้อมูลในหน้าฟอร์ม</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>เป็นช่องกรอกข้อมูลค้นหา</td>
+            </tr>
+            <tr>
+                <td>submit</td>
+                <td>เป็นปุ่มกดเพื่อตกลงหรือยืนยันการทำงาน</td>
+            </tr>
+            <tr>
+                <td>tel</td>
+                <td>ช่องกรอกข้อมูลเบอร์โทรศัพท์</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>ช่องกรอกข้อมูลแบบเป็นตัวอักษร</td>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td>เป็นช่องกรอกข้อมูลหรือแบบเลือกข้อมูล เวลา</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>ช่องกรอกข้อมูลแบบกำหนดชื่อเว็บแอดเดรส</td>
+            </tr>
+            <tr>
+                <td>week</td>
+                <td>เป็นช่องกรอกข้อมูลหรือแบบเลือกข้อมูล สัปดาห์ วัน ปี</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <div>
+        <img src="img/homework_html_structure02.png" alt="Homework - HTML structure" width="100%" />
+    </div>
+
+    <br>
+    <div style="margin-bottom:100px;">
+        <table width="100%">
+            <tr>
+                <th>Tag</th>
+                <th>Output</th>
+                <th>คำอธิบาย</th>
+            </tr>
+            <tr>
+                <td>&lt;strong&gt; &lt;/strong&gt;</td>
+                <td>This is tag  <strong>strong</strong></td>
+                <td>ทำให้เป็นตัวหนา</td>
+            </tr>
+            <tr>
+                <td>&lt;label&gt; &lt;/label&gt; </td>
+                <td>This is tag  <label>label</label> </td>
+                <td>ใช้กำหนดอยู่หน้าฟอร์ม หรือใช้เชื่อมโยงข้อมูลได้ภายได้คำสั่งพิเศษ</td>
+            </tr>
+            <tr>
+                <td>&lt;del&gt; &lt;/del&gt;</td>
+                <td>This is tag  <del>del</del> </td>
+                <td>ทำให้ตัวอักษรโดนขีดกลาง</td>
+            </tr>
+            <tr>
+                <td>&lt;b&gt;  &lt;/b&gt; </td>
+                <td>This is tag  <b>b</b> </td>
+                <td>ทำให้เป็นตัวหนา</td>
+            </tr>
+            <tr>
+                <td>&lt;em&gt; &lt;/em&gt;</td>
+                <td>This is tag  <em>em</em> </td>
+                <td>ทำตัวอักษรเอียง</td>
+            </tr>
+            <tr>
+                <td>&lt;mark&gt; &lt;/mark&gt; </td>
+                <td>This is tag  <mark>mark</mark> </td>
+                <td>ใช้ไฮไลท์ข้อความ โดยมีสีที่พื้นหลังตัวอักษร</td>
+            </tr>
+            <tr>
+                <td>&lt;i&gt; &lt;/i&gt;</td>
+                <td>This is tag  <i>i</i> </td>
+                <td>ทำตัวอักษรเอียง</td>
+            </tr>
+            <tr>
+                <td>&lt;sub&gt; &lt;/sub&gt; </td>
+                <td>This is tag  <sub>sub</sub></td>
+                <td>กำหนดให้เป็นตัวอักษรตกบรรทัดลง</td>
+            </tr>
+            <tr>
+                <td>&lt;sup&gt; &lt;/sup&gt;</td>
+                <td>This is tag  <sup>sup</sup></td>
+                <td>กำหนดให้เป็นตัวอักษรยกบรรทัดขึ้น</td>
+            </tr>
+        </table>
+    </div>
+
+    
+</body>
+</html>
