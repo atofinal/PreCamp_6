@@ -2,7 +2,11 @@
 Surasak somboon
 
 ### (5.Object-Oriented Javascript)
+<<<<<<< HEAD
 Homework OOP. 
+=======
+Homework OOP.
+>>>>>>> b94b507ccfdf2b2ee6c39ed53e7ea91e82572bd6
 
 
 
