@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 13.Print the squares of the numbers 1 - 20. Each number should be on a separate line, next to it the number 2 superscripted, an equal sign and the result. (Example: 102 = 100) [See solution] -->
+    <div id="createElem"></div>
+
+    <script>        
+        let arr = Array.from(Array(20),(x,index) => index + 1);        
+        let nSup = 2;
+        let container = document.getElementById('createElem');
+        
+        arr.forEach(function(arr){  
+            let node = document.createElement('div');
+            let node2 = document.createElement('sup');            
+            node2.append(nSup);
+            node.append(arr , node2 , " = " , arr**nSup);            
+            container.appendChild(node);
+        });
+    </script>
+
+</body>
+</html>
