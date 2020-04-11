@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 18.Print some preformatted text of your choosing. (hint: use the <pre> tag) [See solution] -->
+
+    <b>JavaScript Can Change HTML Content</b>
+    <pre>
+        function run() {
+            document.getElementById("demo").innerHTML = "Hello JavaScript";
+        }
+        run();
+    </pre>
+    <p>One of many JavaScript HTML methods is getElementById(). This example uses the method to "find" an HTML element (with id="demo") and changes the element content (innerHTML) to "Hello JavaScript"</p>
+</body>
+</html>

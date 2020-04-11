@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 14.Prints 10 names with a line break between each name. The list should be alphabetized, and to do this place a subscripted number next to each name based on where it will go in the alphabetized list. (Example: Alan1). Print first, the unalphabetized list with a subscript number next to each name, then the alphabetized list. Both lists should have an <h1> level heading.[See solution] -->
+
+    <h1>Unalphabetized list</h1>
+    <div id="createElem"></div>
+
+    <h1>Alphabetized list</h1>
+    <div id="createElem2"></div>
+    
+    <script>
+        let arrName = ['Clara','Robert','Alan','Sandra','John','Dion','Naruto','Hinata','Thomson','Alexandra'];
+        let container = document.getElementById('createElem');
+        let container2 = document.getElementById('createElem2');
+        
+        const arrDefault = [];
+        const sortOrder = [];
+        arrName.forEach(function(arrName){
+                arrDefault.push(arrName);                                          
+            });      
+
+        function run(){
+            
+            const arrSort = arrName.sort();            
+            arrDefault.forEach(function(arrDefault){
+                const arrOder = arrName.indexOf(arrDefault) + 1;
+                sortOrder.push(arrOder);                
+                const node = document.createElement('p');
+                const node2 = document.createElement('sub');
+                node2.append(arrOder);
+                node.append(arrDefault,node2);
+                container.appendChild(node); 
+            });
+
+            arrSort.forEach(function(arrSort){
+                const node = document.createElement('p');                
+                node.append(arrSort);
+                container2.appendChild(node);                            
+            }); 
+        }
+        run();
+        // console.log("arrName= ",arrName);
+        // console.log("arrDefault= ",arrDefault);
+        // console.log("sortOrder= ",sortOrder);
+        
+    </script>
+    
+</body>
+</html>
