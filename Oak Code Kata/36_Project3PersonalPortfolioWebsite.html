@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - Personal Portfolio Website</title>
+
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+        rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+        rel="stylesheet"/>
+
+    <style>
+        body {
+            background-color: #303841;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: white;
+            margin:0;
+            padding:0;                             
+        }
+        h1,h2 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+        h1 {font-size: 6rem;}
+        h2 {font-size: 4.2rem;}
+        a {
+            text-decoration: none;
+            color: #f0f0f0;
+        }
+        ul {
+            list-style: none;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        @media (max-width: 75em){
+            html {
+                font-size: 60%;
+            }
+        }
+        @media (max-width: 61.25em){
+            html {
+                font-size: 58%;            
+            }
+            .content-body > .imgs > .img-box {
+                flex-basis: calc(50% - 4.2rem);                
+            }
+        }        
+        @media (max-width: 28.75em) {
+            .nav {
+                justify-content: center;
+            }
+            .nav-list {
+                margin: 0 1rem;
+            }
+            .content-body > h2 {                
+                margin-left: 10px;
+                margin-right: 10px;                    
+            }
+            .content-body > .imgs > .img-box {
+                flex-basis:100%;                
+            }
+        }       
+
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #be3144;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+        .nav-list {
+            display: flex;            
+            margin: 0 2em 0 0;            
+        }        
+        .nav-list a {
+            display: block;
+            font-size: 2.2rem;
+            padding: 2rem;
+        }
+        .nav-list a:hover {
+            background: #45567d;
+        }
+                
+        .content-header {
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;            
+            flex-direction: column;            
+        }
+        .content-header > h1 {
+            color:#f0f0f0;
+            margin: 0;
+        }
+        .content-header > p {
+            color:#be3144;
+            font-size: 3rem;
+            font-weight: 200;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .content-body {            
+            text-align: center;         
+            padding: 10rem 0;
+            background: #45567d;
+            flex-direction: column;                                             
+        }
+        .content-body > h2 > span {
+            color:#f0f0f0;
+            border-bottom: 0.2rem solid #f0f0f0;
+            max-width: 640px;
+            height: 100%;
+            flex-basis: 100%;  
+            display: block;
+            margin-left: auto;
+            margin-right: auto;                    
+        }
+        .imgs {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 2rem;
+        }
+        .img-box {            
+            margin: 1.4rem;
+            flex:1;           
+            flex-basis: calc(33.33% - 4.2rem);           
+        }        
+        .imgs > .img-box > a {
+            background: #303841;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            border-radius: 2px;
+            display: block;            
+            height: calc(100% - 0.2rem);
+            padding-bottom: 0.5rem;
+        }
+        .imgs > .img-box > a > img {
+            width:100%;                        
+            object-fit: cover;
+            height: calc(100% - 6.8rem);
+        }
+        .code {
+            color: #303841;
+            transition: color 0.3s ease-out;
+        }
+        .img-box > a:hover .code {
+            color: #ff7f50;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 2px;            
+        }
+        .btn-show-all {
+            font-size: 2rem;
+            background-color: #303841;
+            transition: 0.3s ease-out;
+            margin-top: 4rem;
+        }
+        .btn-show-all:hover {
+            background-color: #be3144;
+        }
+        .btn-show-all:hover > i {
+            transform: translateX(2px);
+        }
+        .btn-show-all > i {
+            margin-left: 10px;
+            transform: translateX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        .content-footer {            
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+            color: #f0f0f0;            
+            flex-direction: column;            
+        }
+        .contact-header > h2 { 
+            font-size: 6rem;
+            margin-bottom: 0;
+        }
+        .contact-header > P { 
+            font-style: italic;
+            margin: 0;
+        }
+        .contact-link {
+            display: flex;            
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 980px;
+            width: 100%;
+            margin-top: 4rem;
+        }
+        .contact-details {
+            font-size: 2.4rem;
+            text-shadow: 2px 2px 1px #1f1f1f;
+            transition: transform 0.3s ease-out;
+        }
+        .contact-details:hover {
+            transform: translateY(8px);
+        }        
+
+        footer {
+            font-weight: 300;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 2rem;            
+            border-top: 4px solid #be3144;
+        }
+        footer > p {
+            margin: 2rem;
+        }
+        footer i {
+            vertical-align: middle;
+        }
+        @media (max-width: 28.75em) {
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 36.Project 3 - Personal Portfolio Website -->
+
+    <div class="container">
+        <div class="menu">
+            <nav id="navbar" class="nav">
+                <ul class="nav-list">
+                  <li>
+                    <a href="#welcome-section">About</a>
+                  </li>
+                  <li>
+                    <a href="#projects">Work</a>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+
+        <div id="welcome-section" class="content-header">
+            <h1>Hey I am Surasak</h1>
+            <p>a web developer</p>
+        </div>
+
+        <div id="projects" class="content-body">
+            <h2><span>These are some of my projects</span></h2>
+
+            <div class="imgs">
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="./StanLee.png" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            Tribute Page
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/random-quote-machine.png" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            Random Quote Machine
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/calc.png" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            JavaScript Calculator
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/map.jpg" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            Map Data Across the Globe
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/wiki.png" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            Wikipedia Viewer
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="img-box">
+                    <a href="#0">
+                        <img src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tic-tac-toe.png" alt="">
+                        <p class="project-title">
+                            <span class="code">&lt;</span>
+                            Tic Tac Toe Game
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                </div>
+                
+            </div>
+
+            <a href="#0" class="btn btn-show-all" target="">Show all <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div id="contact" class="content-footer">
+            <div class="contact-header">
+                <h2>Let's work together...</h2>
+                <p>How do you take your coffee?</p>
+            </div>
+            <div class="contact-link">
+                <a href="#0" target="" class="btn contact-details"><i class="fab fa-facebook-square"></i> Facebook </a>
+
+                <a id="profile-link" href="#0" target=""
+                class="btn contact-details" ><i class="fab fa-github"></i> GitHub</a>
+
+                <a href="#0" target="" class="btn contact-details"><i class="fab fa-twitter"></i> Twitter</a>
+
+                <a href="#0" class="btn contact-details" ><i class="fas fa-at"></i> Send a mail</a
+                    >
+                <a href="#0" class="btn contact-details"><i class="fas fa-mobile-alt"></i> Call me</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+              **This is just a CREATE TEST portfolio. All the projects and contact details given are not real.
+            </p>
+            <!-- ##### credit ##### -->
+            <p> &copy; Created for
+              <a href="https://www.freecodecamp.com/" target="_blank" >freeCodeCamp <i class="fab fa-free-code-camp"></i></a>
+            </p>
+          </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - HTML Form Validation Project</title>
+
+    <style>
+        .container {
+            margin:20px 10px 50px 10px;
+        }
+        .title-info {
+            color:#a199e4; 
+            font-style: italic;
+            margin-top: -20px;
+            margin-bottom: 5px;     
+        }
+        form > fieldset > div{
+            margin:20px auto;
+            margin-left: 50px;
+        }
+        fieldset {
+            margin-bottom: 5px;
+        }
+        .credit {
+            margin-left: 47px;
+        }    
+
+    </style>
+</head>
+<body>
+    <!-- 35.Project 2 - HTML Form Validation Project -->
+
+    <div class="container">
+        <h1>A Simple Form</h1>
+        <h2 class="title-info">Form Fundamentals</h2>
+
+        <form action="" autocomplete="on">
+
+            <fieldset class="legend-1">
+                <legend> Customer Info </legend>
+
+                <div>
+                    <label>Name: </label>
+                    <input type="text" name="name" id="" placeholder="Enter your name" size="50" autofocus required>
+                </div>
+                <div>
+                    <label>Telephone: </label>
+                    <input type="tel" name="telephone" id="" placeholder="Pattern: 1-234-567-8910" size="50" required>
+                </div>
+                <div>
+                    <label>Email address: </label>
+                    <input type="email" name="email" id="" placeholder="Enter your email address" size="50" required>
+                </div>                
+            </fieldset>
+
+            <fieldset>
+                <legend> Books </legend>
+                <div>
+                    <label>
+                        <input type="text" name="productlist" list="books" size="45">
+                        <datalist id="books">
+                            <option value="HTML5 Canvas by Steve Fulton & Jeff Fulton">
+                            <option value="JavaScript: The Definitive Guide by David Flanagan">
+                            <option value="HTML5 Geolocation by Anthony T. Holdener III">
+                            <option value="Supercharged JavaScript Graphics by Raffaele Cecco">
+                            <option value="HTML5: Up and Running by Mark Pilgrim">
+                          </datalist>
+                    </label>
+                    <label>Quantity (Maximum 5):</label>
+                    <input name="form_number" id="form_number"
+               type="number" min="1" max="5" >
+                </div>                
+            </fieldset>
+
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="credit">© 2011 Acme United. All rights reserved.</div>
+
+    </div>
+
+</body>
+</html>
