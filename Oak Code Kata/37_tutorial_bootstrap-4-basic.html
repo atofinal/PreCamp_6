@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorial bootstrap basic</title>
+    <!-- <link rel="stylesheet" href="css/custom.css"/> -->
+
+    <!-- CDN Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">        
+
+    <!-- CDN Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- CDN Fontawesome  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower');
+
+        body {
+            background: #DCEBFC;
+            font-family: 'Indie Flower', cursive;
+        }
+
+        .container {
+            background: #FFF;
+            padding: 1.5rem
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #4F85D7;
+        }
+
+        .footer {
+            font-family: 'Dancing Script', cursive;
+        }
+        .front-icon{
+            display:block;
+            color:#FFFFFF;
+            padding:3rem;
+            background:#4F85D7;
+        }
+        
+        .front-icon i{
+            font-size: 10rem;
+        }
+
+        /* h1 {
+            color: #d14 !important;
+        }
+        div h1{
+            color:red;
+        }
+        #first{
+            background: lightblue;
+        }
+        .second{
+            background: indianred;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- อ่านและทำตาม Tutorial นี้ให้ครบ https://benzneststudios.com/blog/web/bootstrap-4-basic-part-1/ -->
+
+    <!-- ## design ทำตามบทความ  -->
+    <!-- <div id="first">
+        <div class="second">
+            <h1>Outside</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, velit. Ex excepturi voluptatibus aliquid, veritatis quos enim? Quam corrupti ab nostrum sint atque necessitatibus fugit illo, ad voluptates provident magni.
+            </p>
+        </div>
+    </div> -->
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Chapter 1</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis soluta inventore mollitia unde! Dolore architecto repellat inventore voluptate sequi nisi assumenda error, enim exercitationem atque neque harum praesentium vero.
+                </p>
+
+ 
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="container">
+        <div class="row">
+            <h1>Hello World</h1>
+        </div> <!-- Close Row 1 -->
+        <div class="row">
+            <div class="col">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+            </div>
+        </div> <!-- Close Row 2 -->
+        <div class="row">
+            <div class="col-md-4 col-12">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+                <h1>CEO</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam
+                    voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+                    repellat mollitia beatae hic voluptatum deleniti.</p>
+            </div>
+            <div class="col-md-4 col-6">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+                <h1>CTO</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam
+                    voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+                    repellat mollitia beatae hic voluptatum deleniti.</p>
+            </div>
+            <div class="col-md-4 col-6">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+                <h1>CFO</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam
+                    voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+                    repellat mollitia beatae hic voluptatum deleniti.</p>
+            </div>
+        </div> <!-- Close Row 3 -->
+
+        <!-- Start Row 4 -->
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                            class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <h3>Service</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro!
+                            Quisquam
+                            voluptatibus nesciunt impedit</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                            class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <h3>Subscription</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro!
+                            Quisquam
+                            voluptatibus nesciunt impedit</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                            class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <h3>More</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro!
+                            Quisquam
+                            voluptatibus nesciunt impedit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odit illum autem porro! Quisquam
+                    voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+                    repellat mollitia beatae hic voluptatum deleniti.</p>
+            </div>
+        </div>
+        <!-- Close Row 4 -->
+
+        <div class="row">
+            <div class="col-12">
+                <img src="https://images.pexels.com/photos/326513/pexels-photo-326513.jpeg?cs=srgb&dl=apple-computer-desk-devices-326513.jpg&fm=jpg"
+                    class="img-fluid">
+            </div>
+        </div> <!-- Close Row 5 -->
+
+        <div class="row footer p-5">
+            <div class="col-12">
+                <h2 class="text-center animated infinite pulse delay-1s">
+                    <i class="far fa-kiss-wink-heart"></i>
+                    Nothing in life is to be feared,
+                    it is only to be understood.
+                    Now is the time to understand more,
+                    so that we may fear less.</h2>
+            </div>
+            <div class="col-12">
+                <span class="front-icon text-center">
+                    <i class="far fa-kiss-wink-heart"></i>
+                </span>
+            </div>
+        </div>
+        
+
+    </div> <!-- Close container -->
+
+
+</body>
+
+</html>

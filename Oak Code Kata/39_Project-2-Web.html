@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - Web ข่าว 1 หน้า</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <!-- CDN Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">        
+
+    <!-- CDN Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <style>
+            html {
+                font-size: 15;
+            }
+            body {
+                background-color: #f4f5f6;
+                color: #333;
+                font-size: 15px;
+                line-height: 18px;
+                font-family: Arial,Helvetica,sans-serif;
+                overflow-x: hidden;
+            }
+            .navs {
+                background-color: #f72210;
+                margin: 0;
+                padding: 0;
+                color: white;
+                height: 95px;
+                padding: 35px 10px 15px;
+                font-family: "Roboto Condensed",sans-serif;
+            }
+            .navs::before {
+                position: absolute;
+                top: 95px;
+                right: 0;
+                content: "";
+                display: block;
+                width: 78px;
+                background-color: #f72210;
+                border-left: 12px solid white;
+                border-top: 13px solid #f72210;
+            }
+            .nav-txt1 {
+                font-size: 16px;
+                text-align: left;
+                cursor: pointer;
+                padding-left: 2rem;
+                padding-top: 1rem;
+            }
+            .nav-txt2 {
+                font-size: 80px;
+                text-align: center;
+                cursor: pointer;                
+                font-family: 'Roboto Slab', serif;
+                padding-left: 0;
+            }            
+            .nav-txt3 {
+                font-size: 18px;
+                text-align: right;
+                font-weight: bold;
+                cursor: pointer;
+                padding-right: 2rem;
+                padding-top: 1rem;
+            }
+            .btn-subscribe {
+                background: #ffe400;
+                color: black;                
+                border-radius: 3px;
+                padding: 3px 9px;
+                margin-left: 13px;
+            }
+            .btn-subscribe-symb {
+                font-weight: 300;
+            }
+            .menu-header {
+                background-color: white;
+                border-bottom-color: #f4f5f6;
+                height: 56px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                font-size: 19px;
+                line-height: 24px;
+                font-weight: bold;
+                font-family: "Roboto Condensed",sans-serif;                
+            }
+            .menu-header > div > div > span {
+                cursor: pointer;
+            }
+            .list-menu {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .list-menu:not(:first-child) {
+                border-left: solid 1px #d9d9d9;
+            }
+            .container-fluid {
+                background-color: white;
+                padding-top: 20px;
+            }
+            .box-col-left {
+                max-width: 27%;
+                margin-left: 2rem;
+            }
+            .box-col-mid  {
+                min-width: 40%;
+            }
+            .box-col-right {
+                max-width: 27%;                
+            }
+            .content-menu {
+                color: rgba(3,3,3,.4);
+                font-size: 16px;
+                font-weight: bold;
+                font-family: "Roboto Condensed",sans-serif; 
+                padding-bottom: 1rem;
+            }
+            .content-menu-sub {
+                font-size: 24px;
+                font-weight: bold;
+                font-family: "Roboto Condensed",sans-serif; 
+                margin: 10px 0;
+                line-height: 25px;
+            }
+            .box-item1 {
+                width: 100%;
+                height: 12rem;
+                background: #d9d9d9;
+                margin-top: 0.5rem;                
+            }
+            .box-item2 {
+                width: 100%;
+                height: 16rem;
+                background: #d9d9d9;
+                margin-top: 0.5rem;                
+            }
+            .box-item3-1 {
+                border-top: 4px solid #f92859;
+                margin-top: 0.5rem; 
+                padding-top: 10px;
+                padding-bottom: 4px;
+            }
+            .box-item3-2 {
+                border-bottom: 4px solid #1c87fb;
+                padding-bottom: 12px;
+            }
+            .box-item3-img {
+                width: 4rem;
+                height: 4rem;
+                background: #d9d9d9;
+                border-radius: 50%;
+                align-self: center;
+            }
+            .b-3-2-r {
+                display: grid;
+                justify-self: end;
+            }
+            .vs-debate {    
+                position: relative;
+            }
+            .vs-debate::before {
+                position: absolute;
+                content: "";
+                display: block;
+                top: calc(50% - 2px);
+                background-color: #d9d9d9;
+                height: 1px;                
+                left: 0;
+                right: 0;
+            }
+            .vs-mid {
+                position: relative;
+                z-index: 1;
+                width: 32px;
+                height: 32px;
+                background-color: #000;
+                color: #d6d6d6;
+                border-radius: 50%;
+                font: bold 14px/32px "Roboto Condensed",sans-serif;
+                text-align: center;
+                margin: 6px auto;
+            }
+            .vs-debate::after {
+                position: absolute;
+                content: "";
+                display: block;
+                top: 50%;
+                background-color: #d9d9d9;
+                height: 1px;                
+                left: 0;
+                right: 0;
+            }
+            .box-debate1 { 
+                font: bold 17px/24px "Roboto Condensed",sans-serif;
+            }
+            .box-debate1-left {
+                display: grid;
+                grid-template-columns: 30% 70%;
+            }
+            .box-debate1-right {
+                display: grid;
+                grid-template-columns: 70% 30%;
+            }
+            .title-opinion {
+                margin-top: 2rem;
+            }
+            .box-item3-opinion {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-top: 1px solid #ddd;
+            }
+            .opinion-first {
+                border-top:none;
+                padding-top: 0.5rem;
+            }
+            .title-con2-sec2 {
+                margin-top: 2rem;
+            }
+            .con2-sec2-img {
+                width: 100%;
+                height: 8em;
+                background: #d9d9d9;
+                margin-top: 1rem;
+            }
+            .con2-sec2-content {
+                color: rgba(3,3,3,.4);
+                font-size: 16px;                
+                font-family: "Roboto Condensed",sans-serif; 
+                padding-top: 10px;
+            }
+            .con2-sec4-img {
+                width: 100%;
+                height: 5.5em;
+                background: #d9d9d9;                
+            }
+            .title-con2-sec4 {
+                margin-top: 2rem;
+            }
+            .border-con2-sec4 {
+                border-top: solid 1px #d9d9d9;
+                margin-top: 10px;
+                width: 94% !important;
+                margin-bottom: 0;
+            }
+            .box-con2-sec4 {
+                margin-top: 1rem;
+            }
+            .con2-sec4-txt1 {                
+                font-size: 17px;                
+                font-family: "Roboto Condensed",sans-serif; 
+                font-weight: bold;
+            }
+            .con2-sec4-txt2 {
+                color: #333333;
+                font-size: 15px; 
+                padding-top: 10px;
+            }
+            .border-ad-box {
+                border: solid 1px #d9d9d9;
+                padding: 20px;
+            }
+            .ad-box {
+                margin-top: 30px;
+            }
+            .bg-img {
+                width: 100%;
+                height: 13rem;
+                background: #d9d9d9;
+                text-align: center;
+                align-items: center;
+                display: grid;
+                color: #ececec;
+            }
+            .con-ad-txt1 {
+                font: bold 24px/24px "Roboto Condensed",sans-serif;
+            }
+            .con-ad-txt2 {
+                color: #333333;
+                padding-top: 10px;
+                font-size: 15px;
+            }
+            .content2-sec4 {
+                top: 0;
+                position: -webkit-sticky;
+                position: sticky;
+            }
+            .content3-sec2 {
+                top: 0;
+                position: -webkit-sticky;
+                position: sticky;
+            }
+            .border-sec-footer {
+                border-top: solid 2px #f4f5f6;
+                margin-top: 2.5rem;
+            }
+            .box-footer {
+                padding: 30px 3rem;
+            }
+            .footer-sec1-txt1 {
+                color: #f72210;
+                font-family: 'Roboto Slab', serif;
+                font-size: 45px;
+            }
+            .footer-sec1-txt2 {
+                color: #666666;                
+                font-size: 12px;
+            }
+            .nav-media {
+                display: none;
+                background-color: #f72210;
+                color: white;
+                height: 50px;
+                padding: 15px;
+                font-family: "Roboto Condensed",sans-serif;                
+            }
+            .nav-sticky {
+                top: 0;
+                position: -webkit-sticky;
+                position: sticky;
+            }
+            .txt-media-left {
+                font-family: 'Roboto Slab', serif;
+                font-size: 1.7rem;
+                cursor: pointer;
+            }
+            .txt-media-right {
+                text-align: right;
+                font-size: 18px;                
+                font-weight: bold;
+                cursor: pointer;
+                padding-right: 2rem;
+            }
+            @media all and (max-width: 1200px) {
+                .navs,
+                .menu-header {
+                    display: none;
+                }
+                .nav-media {
+                    display: block;
+                }
+            }
+            @media all and (max-width: 990px) {
+                .navs,
+                .menu-header {
+                    display: none;
+                }
+                .nav-media {
+                    display: block;
+                }
+                .box-col-left {
+                    max-width: 50%;
+                    margin-left: 0;
+                }
+                .box-col-mid  {
+                    min-width: 50%;
+                    max-width: 50%;
+                }
+                .box-col-right {
+                    max-width: 100%;                
+                }  
+                .content3-sec2 > .row > .ad-box {                    
+                    max-width: 50%;
+                } 
+                .content3-sec1 {
+                    margin-top: 2em;
+                }          
+
+            }
+            @media all and (max-width: 720px) {
+                .navs,
+                .menu-header {
+                    display: none;
+                }
+                .nav-media {
+                    display: block;
+                }
+                .box-col-left {
+                    max-width: 100%;
+                    margin-left: 0;
+                }
+                .box-col-mid  {
+                    min-width: 100%;
+                    max-width: 100%;
+                }
+                .box-col-right {
+                    max-width: 100%;                
+                }
+                .content3-sec1 {
+                    margin-top: 2em;
+                }
+                .content3-sec2 > .row > .ad-box {                    
+                    max-width: 100%;
+                }
+            }
+
+        </style>
+</head>
+<body>
+    <!-- Project 2 - Web ข่าว 1 หน้า
+    ไปที่ https://www.newsweek.com/
+    แล้วใช้ Bootstrap ในการสร้าง Website นี้ขึ้นมา โดยให้รองรับทั้งแบบ Desktop และแบบ Mobile Website -->
+    
+    <div class="header">
+        <div class="navs">
+            <div class="row">
+                <div class="col-4 nav-txt1">Sat, May 30, 2020</div>
+                <div class="col-4 nav-txt2">LoremNews</div>
+                <div class="col-4 nav-txt3">
+                    <span>LOGIN</span>
+                    <span class="btn-subscribe">SUBSCRIBE <span class="btn-subscribe-symb">></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-header">
+            <div class="row">
+                <div class="col">
+                    <span class="list-menu">U.S.</span>
+                    <span class="list-menu">World</span>
+                    <span class="list-menu">Business</span>
+                    <span class="list-menu">Tech & Science</span>
+                    <span class="list-menu">Culture</span>
+                    <span class="list-menu">Newsgeek</span>
+                    <span class="list-menu">Sports</span>
+                    <span class="list-menu">Health</span>
+                    <span class="list-menu">The Debate</span>
+                    <span class="list-menu">Vantage</span>
+                    <span class="list-menu">Weather</span>
+                    <span class="list-menu">Search</span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-media nav-sticky">
+            <div class="row">
+                <div class="col-6 txt-media-left">LoremNews</div>
+                <div class="col-6 txt-media-right">
+                    <span>LOGIN</span>
+                    <span class="btn-subscribe">SUBSCRIBE <span class="btn-subscribe-symb">></span></span>
+                </div>                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        
+        <div class="row">   
+            
+            <div class="box-col-left col-lg-4">  <!-- content 01 Left -->
+                <div class="content1-sec1">
+                    <span class="content-menu">FEATURED STORIES</span> 
+                    <div class="content1">                    
+                        <div class="box-item1">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam temporibus fuga consectetur cumque enim ducimus rem fugiat magnam et vero?</div>
+                    </div>
+                    <div class="content1">                    
+                        <div class="box-item1">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam temporibus fuga consectetur cumque enim ducimus rem fugiat magnam et vero?</div>
+                    </div>
+                    <div class="content1">                    
+                        <div class="box-item1">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam temporibus fuga consectetur cumque enim ducimus rem fugiat magnam et vero?</div>
+                    </div>
+                    <div class="content1">                    
+                        <div class="box-item1">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam temporibus fuga consectetur cumque enim ducimus rem fugiat magnam et vero?</div>
+                    </div>
+                    <div class="content1">                    
+                        <div class="box-item1">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam temporibus fuga consectetur cumque enim ducimus rem fugiat magnam et vero?</div>
+                    </div>
+                </div>
+                <div class="content1-sec2">
+                    <div class="row">
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>  
+
+            <div class="box-col-mid col-lg-4"> <!-- content 02 Middle -->
+                <div class="content2-sec1">
+                    <span class="content-menu">TOP STORY</span>
+                    <div class="content2">                    
+                        <div class="box-item2">
+                        </div>
+                        <div class="content-menu-sub">Lorem ipsum dolor sit amet consectetur zice adipisicing elit. Reprehenderit, nam.</div>
+                        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium eveniet sint ipsa nesciunt? Exercitationem sunt, iste quasi voluptas blanditiis mollitia maiores ipsa. Odit atque minus sed eligendi sapiente ratione suscipit?</div>
+                    </div>
+                </div>
+                <div class="content2-sec2">
+                    <div class="title-con2-sec2">
+                        <span class="content-menu">HEROES OF THE PANDEMIC</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content2-sec3">
+                    <div class="title-con2-sec2">
+                        <span class="content-menu">CULTURE & TRAVEL</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="con2-sec2-img"></div>
+                            <div class="con2-sec2-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, saepe!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content2-sec4">
+                    <div class="title-con2-sec4">
+                        <span class="content-menu">MORE STORIES</span>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row con2-sec4-item">
+                        <hr class="border-con2-sec4">
+                        <div class="box-con2-sec4 col-3">
+                            <div class="con2-sec4-img"></div>
+                        </div>
+                        <div class="box-con2-sec4 col-9">
+                            <div>
+                                <div class="con2-sec4-txt1">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, laboriosam!
+                                </div>
+                                <div class="con2-sec4-txt2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus nihil harum nobis rem ullam accusamus optio pariatur nulla voluptatum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="box-col-right col-lg-4"> <!-- content 03 Right -->
+                <div class="content3-sec1">
+                    <span class="content-menu">THE DEBATE</span>
+                    <div class="content3">                    
+                        <div class="box-item3">
+                            <div class="box-debate1">
+                                <div class="box-item3-1">
+                                    <div class="box-debate1-left">
+                                        <div class="box-item3-img"></div>
+                                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                    </div>
+                                </div>
+                                <div class="vs-debate">
+                                    <div class="vs-mid">VS</div>
+                                </div>
+                                <div class="box-item3-2">
+                                    <div class="box-debate1-right">                                    
+                                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                        <div class="box-item3-img b-3-2-r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-opinion">
+                                <span class="content-menu">OPINION</span> 
+                            </div>                        
+                            <div class="box-item3-opinion opinion-first">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div>
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div> 
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div>
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div>
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div> 
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div> 
+                            <div class="box-item3-opinion">
+                                <div class="box-debate1-left">
+                                    <div class="box-item3-img"></div>
+                                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, id!</div>
+                                </div>
+                            </div> 
+                            
+                        </div>                    
+                    </div>
+                </div>
+                <div class="content3-sec2">
+                    <div class="row">
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ad-box">
+                            <div class="bg-img">Ad.</div>
+                            <div class="ad-txt border-ad-box">
+                                <div class="con-ad-txt1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quia?
+                                </div>
+                                <div class="con-ad-txt2">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit provident corrupti veniam. Facere distinctio voluptatibus laborum nostrum, tempore accusamus necessitatibus.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div> 
+            
+        </div>        
+        <div class="row border-sec-footer">
+            <div class="col-12 box-footer">
+                <div>
+                    <span class="footer-sec1-txt1">LoremNews </span>
+                    <span class="footer-sec1-txt2">@ 2020 this not real web, test CSS homework.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

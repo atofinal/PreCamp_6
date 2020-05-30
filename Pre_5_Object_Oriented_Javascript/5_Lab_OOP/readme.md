@@ -9,6 +9,7 @@ Lab OPP
 
 Response...
 
+```javascript
 class userTemp {
 
     constructor (name,pass,age,dateTime){
@@ -43,3 +44,5 @@ class userTemp {
     }
 
 }
+
+```  
