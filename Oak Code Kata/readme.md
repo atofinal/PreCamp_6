@@ -69,7 +69,7 @@ Surasak somboon
 
 [33 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/33.createFormRegister.html)
 
-[34 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/34_Project1_HTMLtributePage.html)
+🦠 [34 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/34_Project1_HTMLtributePage.html)
 
 [35 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/35_Project2HTMLFormValidation.html)
 
@@ -79,6 +79,6 @@ Surasak somboon
 
 [38 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/38_Project-1-Website.html)
 
-[39 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/39_Project-2-Web.html)
+🦠 [39 View >>](https://htmlpreview.github.io/?https://github.com/atofinal/PreCamp_6/blob/master/Oak%20Code%20Kata/39_Project-2-Web.html)
 
-![40 View >>](/Oak%20Code%20Kata/40_js_freecodecamp.png?raw=true)
+[40 View >>](/Oak%20Code%20Kata/40_js_freecodecamp.png?raw=true)
